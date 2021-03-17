@@ -71,7 +71,6 @@ app.post(
   async (req, res) => {
     let id = req.params._id;
     let data = req.body;
-    console.log(data);
     await updateEntry(id, data);
     res.redirect("/");
   }
@@ -86,7 +85,6 @@ app.get("/api", async (req, res) => {
   await cursor.forEach((entry) => {
     results.push(entry);
   });
-  console.log(results);
 
   res.json(results);
 });
@@ -114,9 +112,7 @@ NewEntry1.save((err, data) => {
 //pulls in one specific post to edit
 app.get("/api/:id", async (req, res) => {
   let id = req.params.id;
-  console.log(id);
   let data = await EntriesModel.findOne({ _id: id });
-  console.log(data);
 
   res.json(data);
 });

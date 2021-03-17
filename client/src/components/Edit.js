@@ -8,8 +8,6 @@ export default function Edit() {
 
   let temp_id = window.location.pathname.replace("/Edit/", "");
 
-  console.log(temp_id);
-
   //fetching each entry
   useEffect(() => {
     if (oneEntry.length === 0) {
@@ -23,7 +21,6 @@ export default function Edit() {
 
   //container div has a ternary so if each entry does not equal 0, populates with the info from the selected post
   //added an onChange listener to the inputs so that I can change the previous input
-  console.log(oneEntry);
   return (
     <div>
       <h1 id="page-headers">Update Entry Here</h1>
